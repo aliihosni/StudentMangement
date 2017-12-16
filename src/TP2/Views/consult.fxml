@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TP2.Controllers.ConsultController">
+    <children>
+        <JFXTabPane layoutY="69.0" prefHeight="537.0" prefWidth="900.0">
+            <tabs>
+
+                <Tab text="      Consult absence      ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                            <children>
+
+                                <Pane fx:id="detail" layoutX="36.0" layoutY="32.0" prefHeight="90.0" prefWidth="830.0" style="-fx-background-color: #ffffff;-fx-background-radius:5;">
+                                    <children>
+                                        <Text layoutX="-7.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classe" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXComboBox fx:id="classeCombo" layoutX="19.0" layoutY="45.0" onAction="#classeComboAction" prefHeight="26.0" prefWidth="280.0" promptText="Select a classe" style="-fx-background-color: #ffffff;" />
+                                        <Text layoutX="377.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXComboBox fx:id="coursCombo" layoutX="399.0" layoutY="50.0" onAction="#coursCom" prefHeight="26.0" prefWidth="280.0" promptText="Select a course" style="-fx-background-color: #ffffff;" />
+                                      <JFXButton buttonType="RAISED" layoutX="696.0" layoutY="43.0" onAction="#findAb" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #5DBCD2;" text="Find" textFill="WHITE">
+                                          <font>
+                                              <Font name="System Bold" size="12.0" />
+                                          </font>
+                                      </JFXButton>
+                                    </children>
+                                    <effect>
+                                        <DropShadow color="#6e6e6e" />
+                                    </effect>
+                                </Pane>
+                                <TableView fx:id="tableStudent" editable="true" layoutX="41.0" layoutY="134.0" prefHeight="348.0" prefWidth="821.0" tableMenuButtonVisible="true">
+                                    <columns>
+                                        <TableColumn fx:id="studentName" prefWidth="303.0" text="Student name">
+                                            <cellValueFactory><PropertyValueFactory property="studentName" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="studentStatus" minWidth="0.0" prefWidth="135.0" text="Status">
+                                            <cellValueFactory><PropertyValueFactory property="status" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="studentDate" minWidth="0.0" prefWidth="198.0" text="Date">
+                                            <cellValueFactory><PropertyValueFactory property="Date" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="studentNote" minWidth="0.0" prefWidth="198.0" text="Justication">
+                                            <cellValueFactory><PropertyValueFactory property="note" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                                </TableView>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+
+
+
+
+                <Tab text="      Absence form      ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                            <children>
+
+                                <Pane fx:id="absence" layoutX="36.0" layoutY="32.0" prefHeight="90.0" prefWidth="830.0" style="-fx-background-color: #ffffff;-fx-background-radius:5;">
+                                    <children>
+                                        <Text layoutX="-7.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classe" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXComboBox fx:id="ComboClass" layoutX="19.0" layoutY="45.0" onAction="#classeComboAction2" prefHeight="25.0" prefWidth="173.0" promptText="Select a classe" style="-fx-background-color: #ffffff;" />
+                                        <Text layoutX="239.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXComboBox fx:id="ComboCourse" layoutX="258.0" layoutY="47.0" onAction="#courCom2" prefHeight="26.0" prefWidth="186.0" promptText="Select a course" style="-fx-background-color: #ffffff;" />
+
+                                        <Text layoutX="504.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <DatePicker fx:id="datePicker" layoutX="530.0" layoutY="50.0" promptText="Select a date" />
+                                        <JFXButton buttonType="RAISED" layoutX="751.0" layoutY="48.0" onAction="#selectFom" prefHeight="30.0" prefWidth="69.0" style="-fx-background-color: #5DBCD2;" text="Select" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </JFXButton>
+                                    </children>
+                                    <effect>
+                                        <DropShadow color="#6e6e6e" />
+                                    </effect>
+                                </Pane>
+                                <TableView fx:id="tabAbs" editable="true" layoutX="41.0" layoutY="134.0" prefHeight="348.0" prefWidth="821.0" tableMenuButtonVisible="true">
+                                    <columns>
+                                        <TableColumn fx:id="colStdtN" prefWidth="200" text="Student name" />
+                                        <TableColumn fx:id="colAbs" prefWidth="75.0" text="Absence">
+                                            <cellValueFactory><PropertyValueFactory property="property" />     </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                                </TableView>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+
+
+
+                <Tab text="      Modify absence      ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                            <children>
+
+                                <Pane fx:id="search" layoutX="36.0" layoutY="32.0" prefHeight="90.0" prefWidth="830.0" style="-fx-background-color: #ffffff;-fx-background-radius:5;">
+                                    <children>
+                                        <JFXTextField fx:id="nameOfStudent" focusColor="#5dbcd2" layoutX="32.0" layoutY="30.0" maxWidth="653.0" minWidth="214.0" prefHeight="31.0" prefWidth="653.0" promptText="Search by student name.." />
+                                        <JFXButton buttonType="RAISED" layoutX="714.0" layoutY="30.0" onAction="#findStudent" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #5DBCD2;" text="Find" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </JFXButton>
+                                    </children>
+                                    <effect>
+                                        <DropShadow color="#6e6e6e" />
+                                    </effect>
+                                </Pane>
+                                <TableView fx:id="tableEleve" editable="true" layoutX="41.0" layoutY="134.0" prefHeight="348.0" prefWidth="821.0" tableMenuButtonVisible="true">
+                                    <columns>
+                                        <TableColumn fx:id="nameCol" prefWidth="200" text="Student name" />
+                                        <TableColumn fx:id="classeCol" prefWidth="100" text="Classe" />
+                                        <TableColumn fx:id="courseCol" prefWidth="100" text="Course" />
+                                        <TableColumn fx:id="dateCol" prefWidth="200" text="Date" />
+                                        <TableColumn fx:id="abCol" editable="false" prefWidth="75.0" text="Absence">
+                                            <cellValueFactory><PropertyValueFactory property="property" />     </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="noteCol" prefWidth="200" text="Justification" />
+                                    </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                                </TableView>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="       Add       ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Pane fx:id="fog" layoutX="36.0" layoutY="32.0" prefHeight="439.0" prefWidth="393.0" style="-fx-background-color: #ffffff;-fx-background-radius:5;">
+                                    <children>
+                                        <Text layoutX="-7.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXTextField focusColor="#00bcd5" layoutX="21.0" layoutY="46.0" maxWidth="169.0" minWidth="161.0" prefHeight="31.0" prefWidth="169.0" promptText="First" style="-fx-background-color: #ffffff;" />
+                                        <JFXTextField focusColor="#00bcd5" layoutX="213.0" layoutY="46.0" maxWidth="168.0" minWidth="168.0" prefHeight="31.0" prefWidth="168.0" promptText="Last" style="-fx-background-color: #ffffff;" />
+                                        <Text layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <DatePicker layoutX="19.0" layoutY="126.0" />
+                                        <Text layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXComboBox layoutX="20.0" layoutY="207.0" prefHeight="25.0" prefWidth="173.0" promptText="sexe" style="-fx-background-color: #ffffff;" />
+                                        <Text layoutX="-15.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" textAlignment="CENTER" wrappingWidth="176.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXTextField focusColor="#00bcd5" layoutX="21.0" layoutY="284.0" maxWidth="175.0" minWidth="175.0" prefHeight="31.0" prefWidth="175.0" promptText="ex: 0555555555" style="-fx-background-color: #ffffff;" />
+                                        <Text layoutX="-41.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" textAlignment="CENTER" wrappingWidth="176.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXTextField focusColor="#00bcd5" layoutX="22.0" layoutY="373.0" maxWidth="364.0" minWidth="175.0" prefHeight="31.0" prefWidth="357.0" promptText="street , city , state" style="-fx-background-color: #ffffff;" />
+                                        <Pane fx:id="fog1" prefHeight="439.0" prefWidth="393.0" style="-fx-background-color: #ffffff;-fx-background-radius:5;">
+                                            <children>
+                                                <Text layoutX="-9.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student name" textAlignment="CENTER" wrappingWidth="176.13671875">
+                                                    <font>
+                                                        <Font name="Eras Demi ITC" size="16.0" />
+                                                    </font>
+                                                </Text>
+                                                <JFXTextField fx:id="firstnameinput" focusColor="#00bcd5" layoutX="19.0" layoutY="143.0" maxWidth="169.0" minWidth="161.0" prefHeight="31.0" prefWidth="169.0" promptText="First name" style="-fx-background-color: #ffffff;" />
+                                                <JFXTextField fx:id="lastnameinput" focusColor="#00bcd5" layoutX="211.0" layoutY="143.0" maxWidth="168.0" minWidth="168.0" prefHeight="31.0" prefWidth="168.0" promptText="Last name" style="-fx-background-color: #ffffff;" />
+                                                <Text layoutX="19.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ClassRoom" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                                    <font>
+                                                        <Font name="Eras Demi ITC" size="16.0" />
+                                                    </font>
+                                                </Text>
+                                                <JFXComboBox fx:id="classroomcombo" layoutX="39.0" layoutY="55.0" prefHeight="25.0" prefWidth="173.0" promptText="Select a class" style="-fx-background-color: #ffffff;" />
+                                                <Text layoutX="-42.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" textAlignment="CENTER" wrappingWidth="176.13671875">
+                                                    <font>
+                                                        <Font name="Eras Demi ITC" size="16.0" />
+                                                    </font>
+                                                </Text>
+                                                <JFXTextField fx:id="courseinput" focusColor="#00bcd5" layoutX="18.0" layoutY="264.0" maxWidth="364.0" minWidth="175.0" prefHeight="31.0" prefWidth="357.0" promptText="Type new course" style="-fx-background-color: #ffffff;" />
+                                            <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="201.0" onAction="#savestudent" prefHeight="38.0" prefWidth="193.0" ripplerFill="#a0dfe8" style="-fx-background-color: #00BCD5;" text="Save student" textAlignment="CENTER" textFill="WHITE">
+                                                <font>
+                                                    <Font name="System Bold" size="17.0" />
+                                                </font>
+                                            </JFXButton>
+                                                <JFXButton buttonType="RAISED" layoutX="164.0" layoutY="317.0" onAction="#savecourse" prefHeight="38.0" prefWidth="194.0" ripplerFill="#a0dfe8" style="-fx-background-color: #00BCD5;" text="Save course" textAlignment="CENTER" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="17.0" />
+                                                    </font>
+                                                </JFXButton>
+                                            </children>
+                                            <effect>
+                                                <DropShadow color="#6e6e6e" />
+                                            </effect>
+                                        </Pane>
+                                    </children>
+                                    <effect>
+                                        <DropShadow color="#6e6e6e" />
+                                    </effect>
+                                </Pane>
+                                <Pane layoutX="464.0" layoutY="32.0" prefHeight="193.0" prefWidth="399.0" style="-fx-background-color: #ffffff;-fx-background-radius:5;">
+                                    <children>
+                                        <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classroom" textAlignment="CENTER" wrappingWidth="95.13671875">
+                                            <font>
+                                                <Font name="Eras Demi ITC" size="16.0" />
+                                            </font>
+                                        </Text>
+                                        <JFXTextField fx:id="classroominput" focusColor="#00bcd5" layoutX="25.0" layoutY="47.0" maxWidth="241.0" minWidth="168.0" prefHeight="31.0" prefWidth="241.0" promptText="Type new classroom" style="-fx-background-color: #ffffff;" />
+                                        <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="122.0" onAction="#bntclass" prefHeight="38.0" prefWidth="200.0" ripplerFill="#a0dfe8" style="-fx-background-color: #00BCD5;" text="Save class" textAlignment="CENTER" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                        </JFXButton>
+                                    </children>
+                                    <effect>
+                                        <DropShadow color="#6e6e6e" />
+                                    </effect></Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+
+
+            </tabs>
+        </JFXTabPane>
+        <Pane layoutY="5.0" prefHeight="66.0" prefWidth="900.0" style="-fx-background-color: #00BCD5;">
+            <children>
+                <Text fill="WHITE" layoutX="140.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Management System" textAlignment="CENTER" wrappingWidth="582.6376953125">
+                    <font>
+                        <Font name="Eras Bold ITC" size="26.0" />
+                    </font>
+                </Text>
+            </children></Pane>
+        <Pane layoutX="-2.0" prefHeight="6.0" prefWidth="900.0" style="-fx-background-color: #F5FBB0;" />
+    </children>
+</AnchorPane>
